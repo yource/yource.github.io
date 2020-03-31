@@ -20,8 +20,19 @@
 <script>
 if ('serviceWorker' in navigator) {
     window.addEventListener('load', function() {
-        navigator.serviceWorker.register('./sw.js')
+        navigator.serviceWorker.register('./sw.js').then(function() {
+            window.addEventListener('beforeinstallprompt', function(e) {
+                e.userChoice.then(function(choiceResult) {
+                    if (choiceResult.outcome === 'dismissed') {
+                        console.log('用户取消安装应用');
+                    } else {
+                        console.log('用户安装了应用');
+                    }
+                });
+            });
+        })
     });
+
 }
 </script>
 
