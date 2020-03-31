@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="manifest" href="./manifest.json">
+    <meta name="theme-color" content="#ffffff">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="MenuSifu Test">
+    <link rel="apple-touch-icon" href="./img/icon-192x192.png">
+    <title>MenuSifu Test</title>
+</head>
+
+<body>
+    <p>test</p>
+</body>
+<script>
+if ('serviceWorker' in navigator) {
+    window.addEventListener('load', function() {
+        try {
+            navigator.serviceWorker.register('./sw.js').then(function(registartion) {
+                alert("启用ws")
+            });
+        } catch (e) {
+            alert(e)
+        }
+    });
+}
+</script>
+
+</html>
