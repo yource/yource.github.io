@@ -21,9 +21,7 @@
 if ('serviceWorker' in navigator) {
     window.addEventListener('load', function() {
         try {
-            navigator.serviceWorker.register('./sw.js').then(function(registartion) {
-                alert("启用ws")
-            });
+            navigator.serviceWorker.register('./sw.js')
         } catch (e) {
             alert(e)
         }
