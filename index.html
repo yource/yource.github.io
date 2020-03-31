@@ -20,11 +20,7 @@
 <script>
 if ('serviceWorker' in navigator) {
     window.addEventListener('load', function() {
-        try {
-            navigator.serviceWorker.register('./sw.js')
-        } catch (e) {
-            alert(e)
-        }
+        navigator.serviceWorker.register('./sw.js')
     });
 }
 </script>
